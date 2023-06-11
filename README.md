@@ -18,18 +18,42 @@ H3
 H4
 ![Снимок экрана (1820)](https://github.com/EvgeniyZhar/hse23_project/assets/75982317/d1e12249-9892-42d2-ae2c-b7ef580248bd)
 
-e-value	human	mouse	zebrafish	drosophila	c.elegans	ciliate	yeast	methanocaldococcus	thermococcus	 e.coli	 tuberculosis
-H2A	1.00E-300	1.00E-300	1.00E-300	1.23E-43	2.71E-45	3.44E-46	1.07E-45	1.20E+00	1.71E-07	1.18E-21	5.29E-09
-H2B	2.78E-88	1.95E-88	1.86E-83	2.75E-60	5.98E-66	4.62E-51	1.01E-60	1.70E+00	1.20E+00	1.60E+00	2.30E+00
-H3	2.19E-96	1.54E-96	1.77E-95	9.39E-96	4.46E-94	8.41E-86	3.31E-87	3.40E-02	5.70E-02	9.00E-01	4.60E+00
-H4	1.09E-67	7.60E-68	1.13E-68	8.02E-68	6.15E-68	1.96E-45	1.08E-52	8.22E-05	3.31E-05	1.30E+00	6.90E-02
-DNMT3A	1.00E-300	1.00E-300	1.00E-300	2.76E-06	0.009	0.003	0.001	0.002	0.73	1.2	0.19
-											
-											
--LN(e-value)	human	mouse	zebrafish	drosophila	c.elegans	ciliate	yeast	methanocaldococcus	thermococcus	 e.coli	 tuberculosis
-H2A	690.7755279	690.7755279	690.7755279	98.80414483	102.6193805	104.6834428	103.5486705	-0.182321557	15.58160228	48.18877251	19.05744759
-H2B	201.6050373	201.9596588	190.4939862	137.1435047	150.1821956	115.901445	138.1451552	-0.530628251	-0.182321557	-0.470003629	-0.832909123
-H3	220.2642674	220.6163865	218.1746043	218.8085236	214.94785	195.8928965	199.1279549	3.381394754	2.864704011	0.105360516	-1.526056303
-H4	154.1870235	154.5476381	156.4535687	154.4938479	154.7593342	102.9433847	119.6574638	9.406355256	10.31597728	-0.262364264	2.673648774
-DNMT3A	690.7755279	690.7755279	690.7755279	12.80027988	4.710530702	5.80914299	6.907755279	6.214608098	0.314710745	-0.182321557	1.660731207
+```
+!blastp  -query DNMT3A.fasta  -db /mnt/storage/project_2023/proteomes/c.elegans.faa  -out AAc.elegans.blast  -outfmt 7
+!blastp  -query DNMT3A.fasta  -db /mnt/storage/project_2023/proteomes/ciliate.faa  -out AAciliate.blast  -outfmt 7
+!blastp  -query DNMT3A.fasta  -db /mnt/storage/project_2023/proteomes/drosophila.faa  -out AAdrosophila.blast  -outfmt 7
+!blastp  -query DNMT3A.fasta  -db /mnt/storage/project_2023/proteomes/e.coli.faa  -out AAe.coli.blast  -outfmt 7
+!blastp  -query DNMT3A.fasta  -db /mnt/storage/project_2023/proteomes/human.faa  -out AAhuman.blast  -outfmt 7
+!blastp  -query DNMT3A.fasta  -db /mnt/storage/project_2023/proteomes/methanocaldococcus.faa  -out AAmethanocaldococcus.blast  -outfmt 7
+!blastp  -query DNMT3A.fasta  -db /mnt/storage/project_2023/proteomes/mouse.faa  -out AAmouse.blast  -outfmt 7
+!blastp  -query DNMT3A.fasta  -db /mnt/storage/project_2023/proteomes/thermococcus.faa  -out AAthermococcus.blast  -outfmt 7
+!blastp  -query DNMT3A.fasta  -db /mnt/storage/project_2023/proteomes/tuberculosis.faa  -out AAtuberculosis.blast  -outfmt 7
+!blastp  -query DNMT3A.fasta  -db /mnt/storage/project_2023/proteomes/yeast.faa  -out AAyeast.blast  -outfmt 7
+!blastp  -query DNMT3A.fasta  -db /mnt/storage/project_2023/proteomes/zebrafish.faa  -out AAzebrafish.blast  -outfmt 7
+
+!makeblastdb  -dbtype prot  -in /mnt/storage/project_2023/proteomes/zebrafish.faa  -out zebrafish.proteins
+!makeblastdb  -dbtype prot  -in /mnt/storage/project_2023/proteomes/c.elegans.faa  -out c.elegans.proteins
+!makeblastdb  -dbtype prot  -in /mnt/storage/project_2023/proteomes/ciliate.faa  -out ciliate.proteins
+!makeblastdb  -dbtype prot  -in /mnt/storage/project_2023/proteomes/drosophila.faa  -out drosophila.proteins
+!makeblastdb  -dbtype prot  -in /mnt/storage/project_2023/proteomes/e.coli.faa  -out e.coli.proteins
+!makeblastdb  -dbtype prot  -in /mnt/storage/project_2023/proteomes/human.faa  -out human.proteins
+!makeblastdb  -dbtype prot  -in /mnt/storage/project_2023/proteomes/methanocaldococcus.faa  -out methanocaldococcus.proteins
+!makeblastdb  -dbtype prot  -in /mnt/storage/project_2023/proteomes/mouse.faa  -out mouse.proteins
+!makeblastdb  -dbtype prot  -in /mnt/storage/project_2023/proteomes/thermococcus.faa  -out thermococcus.proteins
+!makeblastdb  -dbtype prot  -in /mnt/storage/project_2023/proteomes/tuberculosis.faa  -out tuberculosis.proteins
+!makeblastdb  -dbtype prot  -in /mnt/storage/project_2023/proteomes/yeast.faa  -out yeast.proteins
+
+!blastp  -query H2A.fasta  -db zebrafish.proteins   -outfmt 7  >  gene_H2A_zebrafish.txt
+!blastp  -query H2A.fasta  -db c.elegans.proteins   -outfmt 7  >  gene_H2A_c.elegans.txt
+!blastp  -query H2A.fasta  -db ciliate.proteins   -outfmt 7  >  gene_H2A_ciliate.txt
+!blastp  -query H2A.fasta  -db drosophila.proteins  -outfmt 7  >  gene_H2A_drosophila.txt
+!blastp  -query H2A.fasta  -db e.coli.proteins  -outfmt 7  >  gene_H2A_e.coli.txt
+!blastp  -query H2A.fasta  -db human.proteins  -outfmt 7  >  gene_H2A_human.txt
+!blastp  -query H2A.fasta  -db methanocaldococcus.proteins  -outfmt 7  >  gene_H2A_methanocaldococcus.txt
+!blastp  -query H2A.fasta  -db mouse.proteins  -outfmt 7  >  gene_H2A_mouse.txt
+!blastp  -query H2A.fasta  -db thermococcus.proteins  -outfmt 7  >  gene_H2A_thermococcus.txt
+!blastp  -query H2A.fasta  -db tuberculosis.proteins  -outfmt 7  >  gene_H2A_tuberculosis.txt
+!blastp  -query H2A.fasta  -db yeast.proteins  -outfmt 7  >  gene_H2A_yeast.txt
+# И для остальных с заменой названия гистона
+```
 ![image](https://github.com/EvgeniyZhar/hse23_project/assets/75982317/83f63b52-8048-4aba-9344-28a3e620c2d0)
