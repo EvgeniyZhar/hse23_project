@@ -18,6 +18,7 @@ H3
 H4
 ![Снимок экрана (1820)](https://github.com/EvgeniyZhar/hse23_project/assets/75982317/d1e12249-9892-42d2-ae2c-b7ef580248bd)
 
+Код выравнивания:
 ```
 !blastp  -query DNMT3A.fasta  -db /mnt/storage/project_2023/proteomes/c.elegans.faa  -out AAc.elegans.blast  -outfmt 7
 !blastp  -query DNMT3A.fasta  -db /mnt/storage/project_2023/proteomes/ciliate.faa  -out AAciliate.blast  -outfmt 7
@@ -54,6 +55,6 @@ H4
 !blastp  -query H2A.fasta  -db thermococcus.proteins  -outfmt 7  >  gene_H2A_thermococcus.txt
 !blastp  -query H2A.fasta  -db tuberculosis.proteins  -outfmt 7  >  gene_H2A_tuberculosis.txt
 !blastp  -query H2A.fasta  -db yeast.proteins  -outfmt 7  >  gene_H2A_yeast.txt
-# И для остальных с заменой названия гистона
+#И для остальных с заменой названия гистона
 ```
 ![image](https://github.com/EvgeniyZhar/hse23_project/assets/75982317/83f63b52-8048-4aba-9344-28a3e620c2d0)
