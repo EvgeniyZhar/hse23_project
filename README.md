@@ -5,6 +5,7 @@ DNMT3A (DNA (cytosine-5)-methyltransferase 3A) - ДНК-метилтрансфе
 ![Снимок экрана (1815)](https://github.com/EvgeniyZhar/hse23_project/assets/75982317/55dcc9eb-e358-4efd-adc8-bdbda7267d14)
 
 Множественное белковое выравнивание каждого из 4-х гистонов (для каждого приложен один скриншот из MEGA-X, выравнивание произведено программой ClustalW):
+
 H2A
 ![Снимок экрана (1816)](https://github.com/EvgeniyZhar/hse23_project/assets/75982317/2aba70c3-eb0d-42cd-a9e2-c0ae5b13b01e)
 
